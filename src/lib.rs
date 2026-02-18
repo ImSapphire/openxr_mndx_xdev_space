@@ -13,12 +13,12 @@ use bindings::{
 };
 use openxr::{
     AnyGraphics, Posef, Session, SystemId,
-    sys::{self, FALSE},
+    sys::{self, FALSE, Handle},
 };
 
 pub mod bindings;
 
-pub const XR_MNDX_XDEV_SPACE_EXTENSION_NAME: &str = "XR_MNDX_xdev_space";
+pub const XR_MNDX_XDEV_SPACE_EXTENSION_NAME: &[u8] = b"XR_MNDX_xdev_space\0";
 
 pub trait SessionXDevExtensionMNDX {
     fn get_xdev_list(&self) -> openxr::Result<XDevList>;
